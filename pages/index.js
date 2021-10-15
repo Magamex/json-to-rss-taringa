@@ -13,21 +13,36 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          API para convertir JSON a RSS para Taringa
+          API para convertir JSON a RSS para <a href="https://taringa.net" target="_blank" rel="noopener noreferrer">Taringa</a>
         </h1>
 
-        <p className={styles.description}>
-          Funciona muy simple URL/api/rss?user=22matutex22
+        <div className={styles.description}>
+          <h3>
+            Funciona muy simple, Usas la siguiente URL y al final coloca el usuario de taringa: 
+          </h3>
+          <p>
+            Convierte el JSON que devuelve taringa con los ultimos 5 POST y lo convierte en RSS feed
+          </p>
+        </div>
+
+        <p className={styles.code}>
+          <a href="https://json-to-rss-taringa.vercel.app/api/rss?user=22matutex22" target="_blank" rel="noopener noreferrer">
+            https://json-to-rss-taringa.vercel.app/api/rss?user=nombre_usuario
+          </a>
         </p>
       </main>
 
       <footer className={styles.footer}>
+        <a href="https://github.com/Magamex" target="_blank" rel="noopener noreferrer">
+          Created by Magamex
+        </a>
+
         <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Created by Magamex - Powered by{' '}
+          Powered by{' '}
           <span className={styles.logo}>
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
