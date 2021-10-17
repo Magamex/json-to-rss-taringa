@@ -33,6 +33,10 @@
   flex-grow: 1;
 }
 
+.footer a:hover{
+  color: #0070f3;
+}
+
 .title a {
   color: #0070f3;
   text-decoration: none;
@@ -67,6 +71,10 @@
   font-size: 1.1rem;
   font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
     Bitstream Vera Sans Mono, Courier New, monospace;
+}
+
+.code:hover{
+  color:#0070f3;
 }
 
 .grid {
