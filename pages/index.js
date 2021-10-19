@@ -25,16 +25,21 @@ export default function Home() {
           </p>
         </div>
 
-        <p className={styles.code}>
-          <a href="https://json-to-rss-taringa.vercel.app/api/rss?user=22matutex22" target="_blank" rel="noopener noreferrer">
-            https://json-to-rss-taringa.vercel.app/api/rss?user=nombre_usuario
+        <div className={styles.code}>
+          <p><b>Parametros disponibles:</b></p>
+          <p>* user=NombreUsuario</p>
+          <p>* count=Cantidad de post a mostrar - <b>Opcional</b>, Si no se agrega por defecto toma 5</p>
+          <p><b>Ejemplo:</b></p>
+          <a href="https://json-to-rss-taringa.vercel.app/api/rss?user=22matutex22&count=3" target="_blank" rel="noopener noreferrer">
+            https://json-to-rss-taringa.vercel.app/api/rss?user=nombre_usuario&count=3
           </a>
-        </p>
+          
+        </div>
       </main>
 
       <footer className={styles.footer}>
-        <a href="https://github.com/Magamex" target="_blank" rel="noopener noreferrer">
-          Created by Magamex
+        <a href="https://www.taringa.net/22matutex22" target="_blank" rel="noopener noreferrer">
+          Created by 22matutex22
         </a>
 
         <a

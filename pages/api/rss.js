@@ -2,14 +2,26 @@
 const axios = require('axios');
 const RSS = require('rss');
 
-const get_post = async(usuario)=>{
-  const url_story = `https://api-user.taringa.net/user/${usuario}/feed?count=5&withTips=true&filter=article&sharedBy=false`;
-  const post_res = await axios.get(url_story);
-  return post_res.data.items;
+const get_post = async(usuario,cantidad=5)=>{
+  try {
+    const url_story = `https://api-user.taringa.net/user/${usuario}/feed?count=${cantidad}&withTips=true&filter=article&sharedBy=false`;
+    const post_res = await axios.get(url_story);
+    return post_res.data.items;
+  }catch(err){
+    return 404
+  }
 }
 
 export default async function handler(req, res) {
-  const json_post = await get_post(req.query.user)
+  if(req.query.user == undefined){
+    return res.status(404).send('No se encontro el parametro user');
+  }
+
+  const json_post = await get_post(req.query.user,req.query.count)
+
+  if(json_post == 404 || json_post.length == 0){
+    return res.status(404).send('No se encontro el usuario o  no tiene contenido');
+  }
 
   let blog = {
     title: "Articulos creados en Taringa",
@@ -43,8 +55,6 @@ export default async function handler(req, res) {
   })
 
   const xml = feed.xml({indent: true})
-
-  console.log(blog)
 
   res.status(200).send(xml)
 }
